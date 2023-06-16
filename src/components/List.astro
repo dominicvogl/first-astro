@@ -1,0 +1,14 @@
+---
+import ListItem from './ListItem.astro'
+const allJobs = await Astro.glob('../content/jobs/*.md')
+---
+
+
+<ul>
+    {
+        allJobs.map((job) => (
+            <ListItem jobTitle={job.frontmatter.jobTitle} company={job.frontmatter.company} content={job.compiledContent()}/>
+        ))
+    }
+
+</ul>

@@ -1,0 +1,18 @@
+---
+const { jobTitle, company, content } = Astro.props;
+---
+
+<li>
+    <h3>{jobTitle}</h3>
+    <span class="date">2023</span>
+    <p>{company}</p>
+    <p set:html={content}></p>
+</li>
+
+<style>
+    h3 {
+        font-size: 1.5em;
+        margin-bottom: 0.5em;
+        color: blueviolet;
+    }
+</style>
